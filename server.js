@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/app', routes);
 
-mongoose.connect("mongodb+srv://Mack:Mack>@cluster0.92vkx.mongodb.net/notesDB?retryWrites=true&w=majority" , {
+mongoose.connect("mongodb+srv://Mack:mohan@cluster0.92vkx.mongodb.net/notesDB?retryWrites=true&w=majority" , {
     useUnifiedTopology: true,
     useNewUrlParser: true
 });
