@@ -1,6 +1,6 @@
 {
   "name": "keeper-app-part-1-starting",
-  "proxy":"http://localhost:3001",
+  "proxy":"http://127.0.0.1:3001",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
