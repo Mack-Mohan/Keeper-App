@@ -1,5 +1,5 @@
 const express = require("express");
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const routes = require("./routes/notesApi");
 const dotenv = require("dotenv");
 const cors = require("cors");
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/app', routes);
 
-mongoose.connect(process.env.DB_ACCESS || "mongodb://localhost:27017/notesDB", {
+mongoose.connect("mongodb+srv://Mack:Mack@cluster0.10s9j.mongodb.net/notesDB", {
     useUnifiedTopology: true,
     useNewUrlParser: true
 });
