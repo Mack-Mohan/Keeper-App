@@ -17,8 +17,7 @@ app.use('/app', routes);
 
 mongoose.connect(process.env.DB_ACCESS, {
     useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true
+    useNewUrlParser: true
 });
 
 if(process.env.NODE_ENV === 'production'){
