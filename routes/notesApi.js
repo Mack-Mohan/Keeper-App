@@ -28,3 +28,5 @@ router.post("/deleteNote", (req,res) => {
         }
     });
 });
+
+module.exports = router
