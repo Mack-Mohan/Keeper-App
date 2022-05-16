@@ -1,7 +1,7 @@
 const { response } = require('express');
 const express = require('express');
 const router = express.Router();
-const Note = require("./models/Notes");
+const Note = require("../models/Notes");
 
 router.post("/addNote", (req,res)=> {
     const newNote = new Note({
