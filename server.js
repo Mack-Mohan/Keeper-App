@@ -4,6 +4,7 @@ const routes = require("./routes/notesApi");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const app = express();
+const path = require("path");
 
 dotenv.config();
 
@@ -20,7 +21,10 @@ mongoose.connect(process.env.DB_ACCESS || "mongodb://localhost:27017/notesDB", {
 });
 
 if(process.env.NODE_ENV === "production"){
-    app.use(express.static("front-end/build"));
+    app.use(express.static(path.join(__dirname, 'front-end/build')));
+    app.get('*',(req,res)=>
+        res.sendFile(path.resolve(__dirname, 'front-end', 'build', 'index.html'))
+    );
 }
 else{
 app.get('/',(req,res)=>{
