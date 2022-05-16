@@ -15,9 +15,10 @@ app.use(express.json());
 app.use(cors());
 app.use('/app', routes);
 
-mongoose.connect("mongodb+srv://Mack:Mack@cluster0.10s9j.mongodb.net/notesDB", {
+mongoose.connect(process.env.DB_ACCESS, {
     useUnifiedTopology: true,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex: true
 });
 
 if(process.env.NODE_ENV === 'production'){
