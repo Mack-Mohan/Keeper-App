@@ -18,7 +18,7 @@ function App() {
     var [notes, setNotes] = useState([]);
 
     if(notes.length === 0){
-        axios.get('http://localhost:3001/getNotes')
+        axios.get('/app/getNotes')
         .then(res => {
             
             setNotes(res.data);
@@ -40,7 +40,7 @@ function App() {
             content: ""
             })})
 
-            axios.post("http://localhost:3001/addNote", note);
+            axios.post("/app/addNote", note);
 
     }
 
@@ -62,7 +62,7 @@ function App() {
             );
         }));
     });
-    axios.post("http://localhost:3001/deleteNote",notes[index]);
+    axios.post("/app/deleteNote",notes[index]);
     }
 
 

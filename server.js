@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const app = express();
 
-dotenv.config()
+dotenv.config();
 
 const PORT = process.env.PORT || 3001;
 
@@ -22,9 +22,9 @@ mongoose.connect(process.env.DB_ACCESS || "mongodb://localhost:27017/notesDB", {
 if(process.env.NODE_ENV === "production"){
     app.use(express.static("front-end/build"));
 }
-
-app.get('/app',(req,res)=>{
+else{
+app.get('/',(req,res)=>{
     res.send('I am on!!');
-});
+});}
 
 app.listen(PORT);
