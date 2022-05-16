@@ -20,12 +20,12 @@ mongoose.connect(process.env.DB_ACCESS || "mongodb://localhost:27017/notesDB", {
     useNewUrlParser: true
 });
 
-if(process.env.NODE_ENV === "production"){
-    app.use(express.static(path.join(__dirname, 'front-end/build')));
-    app.get('/*',(req,res)=>
-        res.sendFile(path.resolve(__dirname, 'front-end', 'build', 'index.html'))
-    );
-}
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("front-end/build"));
+    app.get("*", function (req, res) {
+       res.sendFile(path.join(__dirname, "./front-end/build/index.html"));
+  });
+  }
 else{
 app.get('/',(req,res)=>{
     res.send('I am on!!');
