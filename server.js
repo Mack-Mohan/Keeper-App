@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/app', routes);
 
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect("mongodb+srv://Mack:Mack@cluster0.92vkx.mongodb.net/notesBD", {
     useUnifiedTopology: true,
     useNewUrlParser: true
 });
