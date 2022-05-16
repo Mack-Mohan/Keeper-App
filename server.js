@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/app', routes);
 
-mongoose.connect("mongodb+srv://Mack:Mack@cluster0.92vkx.mongodb.net/notesBD" || "mongodb://localhost:27017", {
+mongoose.connect("mongodb+srv://Mack:Mack>@cluster0.92vkx.mongodb.net/notesDB?retryWrites=true&w=majority" , {
     useUnifiedTopology: true,
     useNewUrlParser: true
 });
@@ -23,7 +23,7 @@ mongoose.connect("mongodb+srv://Mack:Mack@cluster0.92vkx.mongodb.net/notesBD" ||
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(path.join(__dirname, 'front-end/build')));
     app.get('*',(req,res)=>
-        res.sendFile(path.resolve(__dirname, 'front-end', 'build', 'index.html'))
+        res.sendFile(path.join(__dirname, 'front-end', 'build', 'index.html'))
     );
   }
 else{
